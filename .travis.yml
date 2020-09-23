@@ -1,0 +1,27 @@
+lenguage: node_js
+cache:
+  directories:
+    - node_modules
+    - ~/.npm
+node_js:
+  - '12'
+git:
+  depth: 3
+script:
+  - yarn test
+notification:
+  slack: comunidad-wmedia:amVi4XO4t6vW8WKkyTGeufqp
+  email:
+    recipients:
+      - vallejoaguilar@gmail.com
+      - vallejoaguilar@outlook.com
+    on_success: always
+    on_failure: always
+deply:
+  provider: heroku
+  skip_cleanup: true
+  keep_history: true
+  api_key: 332a94f7-75ae-4567-8e5c-23fd3a029690
+  app: platzi-store-back-end
+  on:
+    repo: ivallejo/platzi-store-backend
